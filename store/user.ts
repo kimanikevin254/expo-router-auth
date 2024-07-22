@@ -34,8 +34,8 @@ export const useUserStore = create<IUserState>()(
         {
             name: 'user-storage',
             storage: createJSONStorage(() => AsyncStorage),
-            onRehydrateStorage: (state) => {
-                state.setHasHydrated(true)
+            onRehydrateStorage: () => (state) => {
+                state?.setHasHydrated(true)
             },
         }
     )

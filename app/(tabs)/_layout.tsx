@@ -14,16 +14,16 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  const { __hasHydrated, user } = useUserStore(
+  const { _hasHydrated, user } = useUserStore(
     useShallow(state => ({
-      __hasHydrated: state._hasHydrated,
+      _hasHydrated: state._hasHydrated,
       user: state.user
     }))
   )
 
-  console.log(user);
+  console.log(user, _hasHydrated);
 
-  if(!__hasHydrated){
+  if(!_hasHydrated){
     return <Text>Loading...</Text>
   }
 
